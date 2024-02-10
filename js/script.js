@@ -1,35 +1,33 @@
+const noButton = document.getElementById('no')
+const yesButton = document.querySelector('#yes')
+
 function decisionYes() {
 	window.location.href = 'index2.html'
 }
 
+
 function decisionNo() {
-	// ZWIĘKSZENIE PRZYCISKU YES
-	var przycisk = document.getElementById('yes')
-	var aktualnyRozmiarw = window.getComputedStyle(przycisk).width
-	var aktualnyRozmiarh = window.getComputedStyle(przycisk).height
-	var aktualnyRozmiarf = window.getComputedStyle(przycisk).fontSize
-	var nowyRozmiarh = parseFloat(aktualnyRozmiarh) * 1.2 // Zwiększamy rozmiar o 20%
-	var nowyRozmiarw = parseFloat(aktualnyRozmiarw) * 1.2 // Zwiększamy rozmiar o 20%
-	var nowyRozmiarf = parseFloat(aktualnyRozmiarf) * 1.2 // Zwiększamy rozmiar o 20%
+	const aktualnyRozmiarw = window.getComputedStyle(yesButton).width
+	const aktualnyRozmiarh = window.getComputedStyle(yesButton).height
+	const aktualnyRozmiarf = window.getComputedStyle(yesButton).fontSize
+	const nowyRozmiarh = parseFloat(aktualnyRozmiarh) * 1.2 // Zwiększamy rozmiar o 20%
+	const nowyRozmiarw = parseFloat(aktualnyRozmiarw) * 1.2 // Zwiększamy rozmiar o 20%
+	const nowyRozmiarf = parseFloat(aktualnyRozmiarf) * 1.2 // Zwiększamy rozmiar o 20%
 
-	przycisk.style.width = nowyRozmiarw + 'px'
-	przycisk.style.height = nowyRozmiarh + 'px'
-	przycisk.style.fontSize = nowyRozmiar + 'px'
+	yesButton.style.width = nowyRozmiarw + 'px'
+	yesButton.style.height = nowyRozmiarh + 'px'
+	yesButton.style.fontSize = nowyRozmiarf + 'px'
 
-	//var przycisk = document.getElementById("mojPrzycisk");
-	var aktualnyRozmiar = window.getComputedStyle(przycisk).fontSize
-	var nowyRozmiar = parseFloat(aktualnyRozmiar) * 1.2 // Zwiększamy rozmiar o 20%
+	const buttonRect = noButton.getBoundingClientRect()
+	const maxWidth = window.innerWidth - buttonRect.width
+	const maxHeight = window.innerHeight - buttonRect.height
 
-	przycisk.style.fontSize = nowyRozmiar + 'px'
+	const randomLeft = Math.min(Math.floor(Math.random() * maxWidth), 700)
+	const randomTop = Math.min(Math.floor(Math.random() * maxHeight), 700)
 
-	var noButton = document.getElementById('no')
-
-	// Losowe położenie
-	var randomX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth))
-	var randomY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight))
-
-	noButton.style.left = window.scrollX + randomX + 'px'
-	noButton.style.top = window.scrollY + randomY + 'px'
-
-	noButton.classList.add('clicked')
+	noButton.style.left = randomLeft + 'px'
+	noButton.style.top = randomTop + 'px'
 }
+
+yesButton.addEventListener('click', decisionYes)
+noButton.addEventListener('click', decisionNo)
