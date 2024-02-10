@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: pink;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.bg-body {
+  width: 100vw;
+  height: 100vh;
+}
+.bg-body .heart img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  animation: move-heart 10s linear infinite;
+}
+.bg-body .heart2 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  animation: move-heart2 10s linear infinite;
+}
+.bg-body .heart3 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  animation: move-heart3 10s linear infinite;
+}
+.bg-body .heart4 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  animation: move-heart4 10s linear infinite;
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  border-radius: 59%;
+}
+section p {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 500px;
+  height: 50px;
+  margin: 0 auto;
+  line-height: 50px;
+  background: none;
+  border-radius: 25px;
+  box-shadow: 0px 0px 16px rgb(165, 84, 84);
+  background-color: #fff;
+}
+section .image {
+  width: 400px;
+  height: 400px;
+  margin: 0px 200px;
+  border-radius: 50%;
+  background-image: url("../img/IMG_0879.JPG");
+  background-size: 50em;
+  background-position: 10% 70%;
+  box-shadow: 0px 0px 16px rgb(165, 84, 84);
+}
+section button {
+  font-size: 1.5rem;
+  width: 100px;
+  position: absolute;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 5px 5px 16px black;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+section .left-btn {
+  background-color: rgb(46, 172, 46);
+  top: 80%;
+  left: 30%;
+}
+section .right-btn {
+  background-color: rgb(209, 45, 45);
+  top: 80%;
+  left: 60%;
+}
+
+@keyframes move-heart {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    left: 50%;
+    top: 50%;
+  }
+  100% {
+    top: 0;
+    left: 100%;
+  }
+}
+@keyframes move-heart2 {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+  50% {
+    left: 50%;
+    top: 60%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes move-heart3 {
+  0% {
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    left: 30%;
+    top: 90%;
+  }
+  100% {
+    top: 0;
+    left: -10%;
+  }
+}
+@keyframes move-heart4 {
+  0% {
+    top: -40%;
+    left: 100%;
+  }
+  50% {
+    left: 90%;
+    top: 20%;
+  }
+  100% {
+    top: 0;
+    left: 30%;
+  }
+}/*# sourceMappingURL=style.css.map */
